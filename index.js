@@ -31,7 +31,7 @@ app.get("/sourcecode", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("hello");
+  res.send("hello world");
 });
 
 app.post("/signup", (req, res) => {

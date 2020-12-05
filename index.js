@@ -5,10 +5,8 @@ const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const morgan = require("morgan");
-const cookieParser = require("cookie-parser");
 const fetch = require("node-fetch");
 
-app.use(cookieParser());
 app.use(morgan("combined"));
 app.use(bodyParser.raw({ type: "*/*" }));
 app.use(cors());
@@ -32,6 +30,10 @@ let counter = 123;
 
 app.get("/sourcecode", (req, res) => {
     res.send(require("fs").readFileSync(__filename).toString());
+});
+
+app.get("/", (req, res) =>{
+res.send("hello");
 });
 
 app.post("/signup", (req, res) => {
